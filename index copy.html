@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container"> <!-- container-->
+
+<!-- 
+</div> 
+<div class="container"> -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h3 id="forecastTitle">5-Day Weather Forecast</h3> <!-- forecastTitle id will be used to write 5-day forecast for city and state name using jQuery-->
+    </div>
+  </div> <!--div close of jumbotron-->
+
+
+</div> <!--div close of container-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div class="card-body text-center">
+  <h1 class="title"></h1>
+  <img class="img" />
+  <p class="ingredients"></p>
+</div>
+
+ <!-- script -->
+<script type="text/javascript">
+var type = $(this).attr("data-type");
+var queryURL = "http://api.edamam.com/search?q=vegetarian&app_id=e7fa66db&app_key=2a2c5a8700acb772d1556db99f8cfa3b";
+console.log(queryURL);
+
+// Grabbing our API results
+$.ajax({
+    url: queryURL,
+    method: "GET",
+  })
+    .then (function(response) {
+      console.log(response);
+      $(".title").text("Recipe: " + response.hits[0].recipe.label);
+      $(".img").attr("src", response.hits[0].recipe.image);
+      $(".ingredients").text(response.hits[0].recipe.ingredientLines);
+  });
+  
+
+
+  </script>
+</body>
+
+</html>
