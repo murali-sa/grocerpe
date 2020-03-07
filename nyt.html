@@ -16,46 +16,33 @@
   <div class="jumbotron">
     <h1> <span><i class="fa fa-newspaper-o" style="font-size:24px"></i></span>
           GrocerlONE</h1>
+    <h4>User: </h4>
   </div>
   <h2> <span><i class="fa fa-newspaper-o" style="font-size:18px"></i></span> <id="search-param">Recipe Search</h2>
   <!-- SEARCH term input box "searchterm"-->
-  
+  <br>
 <div class="slidecontainer">
    <p>Cook Time (15-60 min)</p>
   <input type="range" min="15" max="60" value="30" class="slider" id="myRange">
-</div>  
-<br>
-<form>
-  <label class="checkbox-inline">
-    
-    <input type="checkbox" value="">Vegetarian
-  </label>
-  <label class="checkbox-inline">
-    <input type="checkbox" value="">Vegan
-  </label>
-  <label class="checkbox-inline">
-    <input type="checkbox" value="">Gluten Free
-  </label>
-</form>
-  <div class="form-group">
+</div>
+<br>  
+ <div class="form-group">
       <label for="usr">Search Term:</label>
       <input type="text" class="form-control" id="searchterm" name="searchterm">
-    </div>
+ </div>
     <!-- number of records input box "numrecords"-->
-
-    <!-- end year input box "endyear-->
-
+<br>
     <!-- buttons for search and clear-->
-    <button type="submit" class="btn btn-success" id="searchbutton"> <span><i class="fa fa-search" style="font-size:20px"></i></span>Search</button>
-    <button type="submit" class="btn btn-success" id="clearbutton"> <span><i class="fa fa-trash" style="font-size:20px"></i></span>Clear Results</button>
-  </form> 
+    <button class="btn btn-success" id="searchbutton"> <span><i class="fa fa-search" style="font-size:20px"></i></span>Search</button>
+    <button class="btn btn-success" id="clearbutton"> <span><i class="fa fa-trash" style="font-size:20px"></i></span>Clear Results</button>
+<!-- </form>  -->
   <div> 
   <h2><span><i class="fa fa-newspaper-o" style="font-size:20px"></i></span><id="top-articles">Recipes</h2>
-  <h2 id="articlelist"></h2>
+  <h2 id="recipelist"></h2>
   </div>
 </div>
 <script>
-  console.log($("#myRange"));
+  console.log($("myRange").value);
   </script>
 </body>
 </html>
